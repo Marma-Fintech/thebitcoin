@@ -1,7 +1,7 @@
-import React, { useRef, useEffect } from 'react';
-import '../customcursor/CustomCursor.css';
+import React, { useRef, useEffect } from "react";
+import "../customcursor/Customcursor.css";
 
-const FadeImage = ({ src, text, alt, direction = 'right' }) => {
+const FadeImage = ({ src, text, alt, direction = "right" }) => {
   const imageRef = useRef(null);
 
   useEffect(() => {
@@ -10,10 +10,10 @@ const FadeImage = ({ src, text, alt, direction = 'right' }) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             // Add the class when the element is in view
-            entry.target.classList.add('in-view');
+            entry.target.classList.add("in-view");
           } else {
             // Optionally remove the class when it's out of view
-            entry.target.classList.remove('in-view');
+            entry.target.classList.remove("in-view");
           }
         });
       },
@@ -38,14 +38,18 @@ const FadeImage = ({ src, text, alt, direction = 'right' }) => {
           ref={imageRef}
           src={src}
           alt={alt}
-          className={`fade-${direction}`} 
-          style={{ width: '100%', height: '100%' }}
+          className={`fade-${direction}`}
+          style={{ width: "100%", height: "100%" }}
         />
       ) : (
         <p
           ref={imageRef}
           className={`fade-${direction}`}
-          style={{ fontSize: '18px', textAlign: 'center', justifyContent: 'center' }}
+          style={{
+            fontSize: "18px",
+            textAlign: "center",
+            justifyContent: "center",
+          }}
         >
           {text}
         </p>
