@@ -11,6 +11,7 @@ import UsDollars from "./components/pages/UsDollars";
 import Bitcoin from "./components/pages/Bitcoin";
 import ContactUs from "./components/pages/ContactUs";
 import CustomCursor from "./components/customcursor/CustomCursor";
+import bgMotion from "/src/assets/bg motion.webp";
 
 function App() {
   const [isTransitioning, setIsTransitioning] = useState(false);
@@ -67,7 +68,7 @@ function App() {
         }}
       >
         <img
-          src="/src/assets/bg motion.webp"
+          src={bgMotion}
           alt="smoke background"
           className="bg-cover w-full h-full object-cover"
         />
@@ -82,9 +83,12 @@ function App() {
       ></div>
 
       {/* Section container */}
-      <div className="relative h-screen w-full  items-center justify-center" style={{
-        position:"fixed",
-      }}>
+      <div
+        className="relative h-screen w-full  items-center justify-center"
+        style={{
+          position: "fixed",
+        }}
+      >
         {sections[currentSection]}
       </div>
     </>

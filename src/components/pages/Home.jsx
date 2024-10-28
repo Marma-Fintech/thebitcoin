@@ -1,6 +1,10 @@
 import React, { useRef, useState, useEffect } from "react";
 import "../Stylepages/Home.css";
 import FadeImage from "../customcursor/FadeImage";
+import buttonscroll from "/src/assets/bg buttonscroll.png";
+import leftarChome from "/src/assets/leftarchome.webp";
+import homedown from "/src/assets/homedown.webp";
+import rightarchome from "/src/assets/rightarchome.webp";
 
 const Home = () => {
   const boxRef = useRef(null);
@@ -8,7 +12,7 @@ const Home = () => {
 
   useEffect(() => {
     const updateHeight = () => {
-      const width = boxRef.current.offsetWidth ;
+      const width = boxRef.current.offsetWidth;
       setHeight(width * 0.07); // 16:9 ratio (9/16 = 0.5625)
     };
 
@@ -57,35 +61,31 @@ const Home = () => {
         </a>
       </header>
       <div className="flex-grow absolute flex flex-col items-center  justify-center p-4 sm:px-6 lg:px-8 text-center justify-center w-full ">
-    
         <FadeImage
-         
-         text={ <p className="m-0 mt-5 p-2">
-           <b>ROME</b> was Not Built in a day, But history can be made
-           overnight.<br></br> it took <b>11,000</b> years of trade before{" "}
-           <tt>BITCOIN</tt> was invented.<br></br> it took us just{" "}
-           <tt>15YEARS</tt> to embark on creating history
-         </p>}
-     
-         direction="up"
-    
-       />
-      
-       <p className="i">SCROLL</p>
-       <img
-         src="/src/assets/bg buttonscroll.png"
-         class=" mx-auto d-block img-fulid "
-         alt="scroll btn"
-         onClick={handleScroll}
-         style={{
-           cursor: "pointer",
-           width: "14px",
-           animation: "arrow-up 1s infinite ease-in-out",
-         }}
-       ></img>
-   
-        </div>
-         
+          text={
+            <p className="m-0 mt-5 p-2">
+              <b>ROME</b> was Not Built in a day, But history can be made
+              overnight.<br></br> it took <b>11,000</b> years of trade before{" "}
+              <tt>BITCOIN</tt> was invented.<br></br> it took us just{" "}
+              <tt>15YEARS</tt> to embark on creating history
+            </p>
+          }
+          direction="up"
+        />
+
+        <p className="i">SCROLL</p>
+        <img
+          src={buttonscroll}
+          class=" mx-auto d-block img-fulid "
+          alt="scroll btn"
+          onClick={handleScroll}
+          style={{
+            cursor: "pointer",
+            width: "14px",
+            animation: "arrow-up 1s infinite ease-in-out",
+          }}
+        ></img>
+      </div>
 
       <div
         style={{
@@ -108,7 +108,7 @@ const Home = () => {
           }}
         >
           <FadeImage
-            src="/src/assets/leftarchome.webp"
+            src={leftarChome}
             className="img-fluid"
             alt="rightarc"
             direction="right"
@@ -127,7 +127,7 @@ const Home = () => {
         >
           {" "}
           <img
-            src="/src/assets/homedown.webp"
+            src={homedown}
             className="img-fluid"
             alt="Responsive image"
             style={{ width: "100%", height: "100%", objectFit: "contain" }}
@@ -145,7 +145,7 @@ const Home = () => {
           }}
         >
           <FadeImage
-            src="/src/assets/rightarchome.webp"
+            src={rightarchome}
             className="img-fluid"
             alt="rightarc"
             direction="left"
