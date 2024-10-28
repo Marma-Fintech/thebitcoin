@@ -1,7 +1,6 @@
-
 // src/components/CustomCursor/CustomCursor.js
-import React, { useEffect, useState } from 'react';
-import './CustomCursor.css'; // Ensure correct path to CSS file
+import React, { useEffect, useState } from "react";
+import "./Customcursor.css"; // Ensure correct path to CSS file
 
 const CustomCursor = () => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
@@ -12,9 +11,9 @@ const CustomCursor = () => {
   };
 
   useEffect(() => {
-    window.addEventListener('mousemove', updateCursorPosition);
+    window.addEventListener("mousemove", updateCursorPosition);
     return () => {
-      window.removeEventListener('mousemove', updateCursorPosition);
+      window.removeEventListener("mousemove", updateCursorPosition);
     };
   }, []);
 
@@ -24,7 +23,7 @@ const CustomCursor = () => {
       style={{
         top: `${position.y}px`,
         left: `${position.x}px`,
-        transform: 'translate(-50%, -50%)', // To center the image on the cursor
+        transform: "translate(-50%, -50%)", // To center the image on the cursor
         backgroundImage: `url("/src/assets/cursorsvg.svg")`, // Correct path to your image
       }}
     />
